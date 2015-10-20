@@ -24,13 +24,14 @@
   file:
     path: "{{ logstash_ssl_dir }}"
     state: directory
-
+- debug: msg="sss"
 - name: Copy SSL key and cert for logstash-forwarder.
   copy:
     src: "{{ logstash_forwarder_ssl_certificate_file }}"
     dest: "{{ logstash_ssl_dir }}/{{ logstash_forwarder_ssl_certificate_file }}"
     mode: 0644
   notify: restart logstash-forwarder
+  when: logstash_forwarder_ssl_copy
 
 - name: Ensure logstash-forwarder is started and enabled on boot.
   service: name=logstash-forwarder state=started enabled=yes
