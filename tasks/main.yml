@@ -24,7 +24,7 @@
   file:
     path: "{{ logstash_ssl_dir }}"
     state: directory
-- debug: msg="sss"
+
 - name: Copy SSL key and cert for logstash-forwarder.
   copy:
     src: "{{ logstash_forwarder_ssl_certificate_file }}"
