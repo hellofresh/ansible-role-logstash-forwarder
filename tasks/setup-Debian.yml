@@ -22,7 +22,7 @@
 
 # See: http://goo.gl/cz9Lnd
 - name: Install logstash-forwarder init script.
-  copy:
-    src: logstash-forwarder.deb.init
+  template:
+    src: logstash-forwarder.deb.init.j2
     dest: /etc/init.d/logstash-forwarder
     mode: 0755

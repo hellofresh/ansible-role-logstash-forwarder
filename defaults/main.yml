@@ -6,6 +6,10 @@ logstash_ssl_dir: /etc/pki/logstash
 logstash_forwarder_ssl_certificate_file: logstash-forwarder-example.crt
 
 logstash_forwarder_ssl_copy: True
+logstash_forwarder_config_dir: "/etc/logstash-forwarder"
+logstash_forwarder_config_spool: "-spool-size 100"
+logstash_forwarder_config_log: "-log-to-syslog"
+
 logstash_forwarder_files:
   - paths:
       - /var/log/messages
